@@ -1,13 +1,11 @@
-const express=express();
+const express=require('express');
 const app = express();
-
-import OS from "os";
+const OS = require('os')
 
 app.get("/", async (req, res) => {
     const status = {
       uptime: process.uptime(),
       message: "Server is running...",
-      process_id: process.pid,
       date: new Date(),
       platform: OS.platform(),
       processor: OS.cpus()[0].model,
